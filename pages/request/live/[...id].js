@@ -115,7 +115,6 @@ export default function RequestLive() {
 	const GuestVideo = (
 		<video
 			playsInline
-			muted
 			ref={guestVideo}
 			autoPlay
 			style={{ height: "100%", width: "100%" }}
