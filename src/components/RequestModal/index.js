@@ -76,7 +76,7 @@ export default function RequestModal() {
 
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />
-				<ModalContent>
+				<ModalContent backgroundColor="#1d1d1d">
 					<ModalHeader>Add Request</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody>
