@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Button, Heading, ListItem, UnorderedList } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
@@ -7,9 +6,7 @@ import Image from "next/image";
 import logo from "../../../public/assets/quackquack.svg";
 import { signOut } from "../../utils/supabase";
 
-export default function Navbar() {
-	const [isLoggedIn, setIsLoggedIn] = useState(null);
-
+export default function Navbar({ isLoggedIn }) {
 	const router = useRouter();
 	const isOnHomePage = router.route === "/";
 	const isInSession = router.route.includes("/request/live/");
@@ -20,17 +17,6 @@ export default function Navbar() {
 		return;
 	}
 
-	useEffect(() => {
-		const userObject = JSON.parse(
-			localStorage.getItem(process.env.NEXT_PUBLIC_AUTH_KEY)
-		)?.user;
-
-		const userIsAuthenticated = userObject?.user?.role === "authenticated";
-
-		if (userIsAuthenticated) {
-			setIsLoggedIn(true);
-		}
-	}, []);
 	return (
 		<>
 			{isOnHomePage && (
@@ -65,7 +51,7 @@ export default function Navbar() {
 						<Image src={logo} alt="Quack" width={25} />
 						<Heading size="lg">de-duck</Heading>
 					</ListItem>
-					{isOnHomePage && isLoggedIn !== null && (
+					{isOnHomePage && (
 						<Button
 							colorScheme="orange"
 							size="sm"
@@ -75,18 +61,6 @@ export default function Navbar() {
 							}}
 						>
 							Dashboard
-						</Button>
-					)}
-					{isOnHomePage && isLoggedIn == null && (
-						<Button
-							colorScheme="orange"
-							size="sm"
-							rightIcon={<ArrowForwardIcon />}
-							onClick={() => {
-								router.push("/dashboard");
-							}}
-						>
-							Sign In
 						</Button>
 					)}
 					{!isInSession && isLoggedIn !== null && (
