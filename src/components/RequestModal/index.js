@@ -75,10 +75,7 @@ export default function RequestModal() {
 			</Button>
 
 			<Modal isOpen={isOpen} onClose={onClose}>
-				<ModalOverlay
-					bg="blackAlpha.300"
-					backdropFilter="blur(10px) hsl(39, 100%, 50%)"
-				/>
+				<ModalOverlay bg="blackAlpha.600" />
 				<ModalContent backgroundColor="#1d1d1d">
 					<ModalHeader>Add Request</ModalHeader>
 					<ModalCloseButton />
