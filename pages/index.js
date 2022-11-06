@@ -2,15 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Navbar from "../src/components/Navbar";
 import { useRouter } from "next/router";
-import {
-	Box,
-	Button,
-	Flex,
-	Heading,
-	Text,
-	Grid,
-	GridItem,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text, SimpleGrid } from "@chakra-ui/react";
 import FeatureCard from "../src/components/FeatureCard";
 
 export default function Home() {
@@ -84,6 +76,7 @@ export default function Home() {
 					gap={2}
 					justifyContent="center"
 					alignItems="center"
+					marginTop={10}
 				>
 					<Heading
 						textAlign="center"
@@ -106,15 +99,16 @@ export default function Home() {
 						onClick={() => {
 							router.push("/dashboard");
 						}}
+						marginTop={3}
 					>
 						Get Started
 					</Button>
 				</Flex>
 
-				<Grid templateColumns="repeat(3, 1fr)" gap={6} width="100%">
+				<SimpleGrid columns={[2, null, 3]} gap={6} width="100%">
 					{features.map((feature, index) => {
 						return (
-							<GridItem
+							<Box
 								key={index}
 								w="100%"
 								p={4}
@@ -126,10 +120,10 @@ export default function Home() {
 									title={feature.title}
 									desc={feature.desc}
 								/>
-							</GridItem>
+							</Box>
 						);
 					})}
-				</Grid>
+				</SimpleGrid>
 			</Box>
 		</Box>
 	);
