@@ -4,6 +4,7 @@ import Navbar from "../src/components/Navbar";
 import { useRouter } from "next/router";
 import { Box, Button, Flex, Heading, Text, SimpleGrid } from "@chakra-ui/react";
 import FeatureCard from "../src/components/FeatureCard";
+import Footer from "../src/components/Footer";
 
 export default function Home() {
 	const [isLoggedIn, setIsLoggedIn] = useState(null);
@@ -125,6 +126,7 @@ export default function Home() {
 					})}
 				</SimpleGrid>
 			</Box>
+			<Footer />
 		</Box>
 	);
 }
