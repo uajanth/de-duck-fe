@@ -20,7 +20,7 @@ export default function Navbar({ isLoggedIn }) {
 	return (
 		<>
 			{isOnHomePage && (
-				<Banner content="👀 Looking to get paid for helping with debugging? 💰">
+				<Banner content="👀 Looking to get paid while helping others? 💰">
 					<Button
 						size="xs"
 						variant="outline"
