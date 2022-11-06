@@ -6,7 +6,9 @@ import Image from "next/image";
 import logo from "../../../public/assets/quackquack.svg";
 import { signOut } from "../../utils/supabase";
 
-export default function Navbar({ isLoggedIn }) {
+export default function Navbar() {
+	const [isLoggedIn, setIsLoggedIn] = useState(null);
+
 	const router = useRouter();
 	const isOnHomePage = router.route === "/";
 	const isInSession = router.route.includes("/request/live/");
@@ -17,6 +19,17 @@ export default function Navbar({ isLoggedIn }) {
 		return;
 	}
 
+	useEffect(() => {
+		const userObject = JSON.parse(
+			localStorage.getItem(process.env.NEXT_PUBLIC_AUTH_KEY)
+		)?.user;
+
+		const userIsAuthenticated = userObject?.user?.role === "authenticated";
+
+		if (userIsAuthenticated) {
+			setIsLoggedIn(true);
+		}
+	}, []);
 	return (
 		<>
 			{isOnHomePage && (

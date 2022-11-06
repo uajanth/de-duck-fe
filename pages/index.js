@@ -64,7 +64,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Navbar isLoggedIn={isLoggedIn} />
+			<Navbar />
 			<Box
 				width={["90%", "", "75%", "70%"]}
 				margin="0 auto"
