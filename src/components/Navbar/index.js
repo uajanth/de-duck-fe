@@ -51,7 +51,7 @@ export default function Navbar({ isLoggedIn }) {
 						<Image src={logo} alt="Quack" width={25} />
 						<Heading size="lg">de-duck</Heading>
 					</ListItem>
-					{isOnHomePage && isLoggedIn && (
+					{isOnHomePage && isLoggedIn !== null && (
 						<Button
 							colorScheme="orange"
 							size="sm"
@@ -63,7 +63,7 @@ export default function Navbar({ isLoggedIn }) {
 							Dashboard
 						</Button>
 					)}
-					{isOnHomePage && !isLoggedIn && (
+					{isOnHomePage && isLoggedIn == null && (
 						<Button
 							colorScheme="orange"
 							size="sm"
