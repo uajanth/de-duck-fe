@@ -67,31 +67,31 @@ export default function LiveContainer({
 				</Box>
 			</Flex>
 
-			{requestsVisibility && (
-				<Flex direction="column" width="90%" gap={4}>
-					{isHost && (
-						<Flex gap={2} justify="center" align="center">
-							{Object.keys(users).map((key, index) => {
-								if (key === yourID) {
-									return null;
-								}
-								return (
-									<Button
-										key={index}
-										onClick={() => addRequestingUser(key)}
-										colorScheme="green"
-									>
-										Add Saagar
-									</Button>
-								);
-							})}
-						</Flex>
-					)}
-					<Flex justify="center" align="center">
-						{incomingCall}
-					</Flex>
+			{/* {requestsVisibility && ( */}
+			<Flex direction="column" width="90%" gap={4}>
+				{/* {isHost && ( */}
+				<Flex gap={2} justify="center" align="center">
+					{Object.keys(users).map((key, index) => {
+						if (key === yourID) {
+							return null;
+						}
+						return (
+							<Button
+								key={index}
+								onClick={() => addRequestingUser(key)}
+								colorScheme="green"
+							>
+								Add Saagar
+							</Button>
+						);
+					})}
 				</Flex>
-			)}
+				{/* )} */}
+				<Flex justify="center" align="center">
+					{incomingCall}
+				</Flex>
+			</Flex>
+			{/* )} */}
 			<Flex
 				width="50%"
 				borderColor="white.600"

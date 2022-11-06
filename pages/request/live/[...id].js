@@ -40,7 +40,7 @@ export default function RequestLive() {
 
 		if (userIsAuthenticated) {
 			setIsLoggedIn(true);
-			socket.current = io.connect(`${process.env.NEXT_PUBLIC_BACKEND_URL}/`);
+			socket.current = io.connect(`${process.env.NEXT_PUBLIC_BACKEND_URL}`);
 
 			socket.current.on("yourID", (id) => {
 				setYourID(id);
