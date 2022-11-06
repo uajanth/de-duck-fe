@@ -35,17 +35,17 @@ export default function Home() {
 			desc: "This is a sample description for feature 3",
 		},
 		{
-			emoji: "⚡",
+			emoji: "📦",
 			title: "Feature 4",
 			desc: "This is a sample description for feature 4",
 		},
 		{
-			emoji: "💡",
+			emoji: "🔩",
 			title: "Feature 5",
 			desc: "This is a sample description for feature 5",
 		},
 		{
-			emoji: "🔧",
+			emoji: "🔑",
 			title: "Feature 6",
 			desc: "This is a sample description for feature 6",
 		},
